@@ -50,8 +50,16 @@ void Stop();
 Use for Start/Stop event running.
 If call Start() for RunOnce event, it stops after Callback func running;
 
+```c++
+void loop() {
+ uEvent.Update();
+}
+```
+Use for update event state and activate Callback func if time is reached
 
-- Also you can use the time checking function with the correct processing of the transition through zero (~ 70 day work period)
+## BONUS
+
+Also you can use the time checking function with the correct processing of the transition through zero (~ 70 day work period)
 ```c++
 bool CheckTime(unsigned long lastt, unsigned long idelay);
 ```
