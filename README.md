@@ -22,7 +22,7 @@ https://github.com/NailAlex/SheduledEvent
 void SetEvent(unsigned long aDelayTime, unsigned long aCycleTime, void(*pCallbackFunction)(void), uint8_t aType);
 ```
 Set event parameters
-aDelayTime - time from Start() to real start running (also-called delayed start); Use EVENT_DELAYED for set thist event type
+aDelayTime - time from Start() to real start running (also-called delayed start); Use EVENT_DELAYED for set this event type
 aCycledTime - cycle period time for cycled event(such as Render function); If the A flag EVENT_DELAYED is used, it starts to work after a delay else Run immidiately;
 pCallbackFunction - mandatory external function for Callback;
 aType - Setup flags. Use EVENT_RUNONCE, EVENT_DELAYED, EVENT_CYCLED with "or" operand, example:
