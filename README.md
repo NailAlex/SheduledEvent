@@ -21,34 +21,44 @@ https://github.com/NailAlex/SheduledEvent
 ```c++
 void SetEvent(unsigned long aDelayTime, unsigned long aCycleTime, void(*pCallbackFunction)(void), uint8_t aType);
 ```
-Set event parameters
-aDelayTime - time from Start() to real start running (also-called delayed start); Use EVENT_DELAYED for set this event type
-aCycledTime - cycle period time for cycled event(such as Render function); If the A flag EVENT_DELAYED is used, it starts to work after a delay else Run immidiately;
-pCallbackFunction - mandatory external function for Callback;
-aType - Setup flags. Use EVENT_RUNONCE, EVENT_DELAYED, EVENT_CYCLED with "or" operand, example:
 
+Set event parameters
+
+aDelayTime - time from Start() to real start running (also-called delayed start); Use EVENT_DELAYED for set this event type
+
+aCycledTime - cycle period time for cycled event(such as Render function); If the A flag EVENT_DELAYED is used, it starts to work after a delay else Run immidiately;
+
+pCallbackFunction - mandatory external function for Callback;
+
+aType - Setup flags. Use EVENT_RUNONCE, EVENT_DELAYED, EVENT_CYCLED with "or" operand, example:
 ```c++
 uEvent.SetEvent(5000, 1000, RenderToSerial, EVENT_CYCLED | EVENT_DELAYED);
 ```
+
 Setup Event for 1 time per second render to serial port with 5 seconds delay.
 
 Also, time constants are provided for specifying the time:
+
 EVENT_SEC - one second (1000ms)
+
 EVENT_MIN - ome min (60000ms)
+
 EVENT_HOUR - one hour (3600000ms)
 
 and use it for setup 2 hour 14 min 12 sec delay with these call RunOnce event
+
 ```c++
 uEvent.SetEvent(EVENT_HOUR * 2 + EVENT_MIN * 14 + EVENT_SEC * 12, 0, ChangeTheCounter, EVENT_RUNONCE | EVENT_DELAYED);
 ```
+
+Use for Start/Stop event running:
 
 ```c++
 void Start();
 void Stop();
 ```
 
-Use for Start/Stop event running.
-If call Start() for RunOnce event, it stops after Callback func running;
+If call Start() for RunOnce event, it stops after Callback func activating;
 
 ```c++
 void loop() {
@@ -63,10 +73,15 @@ Also you can use the time checking function with the correct processing of the t
 ```c++
 bool CheckTime(unsigned long lastt, unsigned long idelay);
 ```
+
 Where:
+
 lastt - Time value (millis) at start(last) position
+
 idelay - Delay period for event
+
 Result - if current time > Last Time + Delay (with ZeroPoint correct) then return "True"
 
 ## History
+
 (Feb 2018) v1.1 First release with CheckTime function. 
