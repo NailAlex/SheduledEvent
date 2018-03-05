@@ -37,14 +37,13 @@ void Event1_handler(){
 }
 
 void Event2_handler(){
- int val = analogRead(A0); 
  Serial.print("This is Cycled Event! time from start = "); Serial.println(millis()); 
 }
 
 void Event3_handler(){
-   Serial.print("This is fast cycled and delayed Event! A1 value = "); Serial.println(analogRead(A0)); 
-     if (flag) digitalWrite(13,HIGH); else digitalWrite(13,LOW);
+ Serial.print("This is fast cycled and delayed Event! A0 value = "); Serial.println(analogRead(A0)); 
  flag=!flag;
+ if (flag) digitalWrite(13, HIGH); else digitalWrite(13,LOW);
 }
 
 
