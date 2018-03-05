@@ -26,7 +26,7 @@ Set event parameters
 
 aDelayTime - time from Start() to real start running (also-called delayed start); Use EVENT_DELAYED for set this event type
 
-aCycledTime - cycle period time for cycled event(such as Render function); If the A flag EVENT_DELAYED is used, it starts to work after a delay else Run immidiately;
+aCycledTime - cycle period time for cycled event(such as Render function); If the EVENT_DELAYED flag is used, it starts to work after a delay else Run immidiately;
 
 pCallbackFunction - mandatory external function for Callback;
 
