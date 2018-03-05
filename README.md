@@ -2,11 +2,10 @@
 
 ## Sheduled cycled and runonce events library for Arduino with ZeroPoint time correct processing
 
-[![License: MIT License]](https://mit-license.org/) 
-
 by Niskorodnov Alexander aka NailAlex(NailMan)
 
-https://mit-license.org/
+License: MIT License
+https://mit-license.org/ 
 
 Sheduled Events for Arduino platforms with Create/Start/Stop/Update and time checking function with the correct processing of the transition through zero.
 Mostly used for periodical cycled events(render data to serial ports, graphics, etc.) and for RunOnce events with delayed start.
