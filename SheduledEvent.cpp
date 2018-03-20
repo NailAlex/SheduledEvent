@@ -87,9 +87,10 @@ void SheduledEvent::Update()
     }
    else 
     {if (Started){  
-          if (CheckTime(_LastTime,_CycleTime)) {pCallback();           //activate CallBack function if time to Run it
-            if (isCycled) {Started=true; _LastTime=millis(); }         //if Event isCycled then restart Cycle
+          if (CheckTime(_LastTime,_CycleTime)) {
+             if (isCycled) {Started=true; _LastTime=millis(); }         //if Event isCycled then restart Cycle
             else Started=false;                                        //else stop Running.
+           pCallback();           //activate CallBack function if time to Run it
           }
      } 
     }
